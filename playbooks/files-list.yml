@@ -3,7 +3,7 @@
 # add file items as many as you want.
 # Format explain:
 #
-#file_itmes:
+#file_items:
 #  - src_file:  source file name, eg. filename.txt
 #    dest_file: target file path and name, eg./path_to_file/filename.txt
 #    file_owner: target file owner, eg. zhangsan
@@ -15,7 +15,7 @@
 #
 # Example: BEGIN
 #
-#file_itmes:
+#file_items:
 #  - src_file:  foo.txt
 #    dest_file: /path_to_file/foo.txt
 #    file_owner: zhangsan
@@ -24,14 +24,14 @@
 #
 # Example END
 
-file_itmes:
+file_items:
   - src_file:  foo.txt
     dest_file: /home/vagrant/foo.txt
     file_owner: vagrant
     file_group: vagrant
     file_mode: '0644'
 
-file_itmes:
+file_items:
   - src_file:  bar.txt
     dest_file: /hom/ansible/bar.txt
     file_owner: ansible
