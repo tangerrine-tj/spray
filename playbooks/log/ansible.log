@@ -1,0 +1,908 @@
+2020-06-05 11:22:41,802 p=14849 u=johnny n=ansible | vm11 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2020-06-05 11:23:29,285 p=16043 u=johnny n=ansible | vm11 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2020-06-05 11:23:41,841 p=16495 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 18, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: copy files to target
+  ^ here
+
+2020-06-05 11:25:37,020 p=18800 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 18, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: copy files to target
+  ^ here
+
+2020-06-05 11:27:43,158 p=20958 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 11:27:43,578 p=20958 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 11:27:43,578 p=20958 u=johnny n=ansible | fatal: [vm11]: FAILED! => {
+    "changed": true, 
+    "cmd": [
+        "cat", 
+        "files/files-list.yml"
+    ], 
+    "delta": "0:00:00.002523", 
+    "end": "2020-06-05 03:27:43.578517", 
+    "rc": 1, 
+    "start": "2020-06-05 03:27:43.575994"
+}
+
+STDERR:
+
+cat: files/files-list.yml: No such file or directory
+
+
+MSG:
+
+non-zero return code
+
+2020-06-05 11:27:43,579 p=20958 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 11:27:43,579 p=20958 u=johnny n=ansible | vm11                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 11:28:12,300 p=21415 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 11:28:12,595 p=21415 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 11:28:12,596 p=21415 u=johnny n=ansible | fatal: [vm11]: FAILED! => {
+    "changed": true, 
+    "cmd": [
+        "cat", 
+        "files-list.yml"
+    ], 
+    "delta": "0:00:00.002581", 
+    "end": "2020-06-05 03:28:12.596665", 
+    "rc": 1, 
+    "start": "2020-06-05 03:28:12.594084"
+}
+
+STDERR:
+
+cat: files-list.yml: No such file or directory
+
+
+MSG:
+
+non-zero return code
+
+2020-06-05 11:28:12,597 p=21415 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 11:28:12,597 p=21415 u=johnny n=ansible | vm11                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 11:29:23,360 p=22716 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 11:29:23,548 p=22716 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 11:29:23,549 p=22716 u=johnny n=ansible | changed: [vm11]
+2020-06-05 11:29:23,573 p=22716 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 11:29:23,573 p=22716 u=johnny n=ansible | fatal: [vm11]: FAILED! => {}
+
+MSG:
+
+The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'sdtout'
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 15, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - set_fact: files={{ files_list.sdtout }}
+      ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+
+2020-06-05 11:29:23,574 p=22716 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 11:29:23,574 p=22716 u=johnny n=ansible | vm11                       : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 11:29:52,418 p=23176 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 11:29:52,606 p=23176 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 11:29:52,606 p=23176 u=johnny n=ansible | changed: [vm11]
+2020-06-05 11:29:52,621 p=23176 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 11:29:52,621 p=23176 u=johnny n=ansible | fatal: [vm11]: FAILED! => {}
+
+MSG:
+
+The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'sdtout'
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 15, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - set_fact: files="{{ files_list.sdtout }}"
+      ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+
+2020-06-05 11:29:52,622 p=23176 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 11:29:52,622 p=23176 u=johnny n=ansible | vm11                       : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 11:30:19,643 p=23650 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 11:30:19,830 p=23650 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 11:30:19,830 p=23650 u=johnny n=ansible | changed: [vm11]
+2020-06-05 11:30:19,846 p=23650 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 11:30:19,846 p=23650 u=johnny n=ansible | ok: [vm11]
+2020-06-05 11:30:19,873 p=23650 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 11:30:19,873 p=23650 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+The files are ---
+# defaults file for copy-files
+#file_itmes:
+#  - src_file:  source file name, eg. filename.txt
+#    dest_file: target file path and name, eg./path_to_file/filename.txt
+#    file_owner: target file owner, eg. zhangsan
+#    file_group: target file group, eg. staff
+#    file_mode: target file privilege, eg. 0644
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 11:30:20,064 p=23650 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 11:30:20,065 p=23650 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 11:30:20,065 p=23650 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 11:30:20,120 p=23650 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 11:30:20,121 p=23650 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 11:30:20,170 p=23650 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 11:30:20,170 p=23650 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 11:30:20,172 p=23650 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 11:30:20,172 p=23650 u=johnny n=ansible | vm11                       : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 14:59:53,829 p=18274 u=johnny n=ansible | ERROR! failed at splitting arguments, either an unbalanced jinja2 block or quotes: grep -v '^#":w! files-list.yml
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 10, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: read the contents of files list
+      ^ here
+
+2020-06-05 15:00:07,900 p=18569 u=johnny n=ansible | ERROR! failed at splitting arguments, either an unbalanced jinja2 block or quotes: grep -v '^#" files-list.yml
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 10, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: read the contents of files list
+      ^ here
+
+2020-06-05 15:00:17,832 p=18723 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 15:00:18,019 p=18723 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 15:00:18,019 p=18723 u=johnny n=ansible | changed: [vm11]
+2020-06-05 15:00:18,036 p=18723 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 15:00:18,036 p=18723 u=johnny n=ansible | ok: [vm11]
+2020-06-05 15:00:18,052 p=18723 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:00:18,052 p=18723 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+The files are ---
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 15:00:18,349 p=18723 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 15:00:18,350 p=18723 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:18,351 p=18723 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:18,453 p=18723 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:18,453 p=18723 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:18,558 p=18723 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:18,558 p=18723 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:18,561 p=18723 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 15:00:18,561 p=18723 u=johnny n=ansible | vm11                       : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 15:00:44,640 p=20243 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 15:00:44,829 p=20243 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 15:00:44,829 p=20243 u=johnny n=ansible | changed: [vm11]
+2020-06-05 15:00:44,846 p=20243 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 15:00:44,846 p=20243 u=johnny n=ansible | ok: [vm11]
+2020-06-05 15:00:44,862 p=20243 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:00:44,863 p=20243 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+The files are file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 15:00:44,929 p=20243 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 15:00:44,929 p=20243 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:44,930 p=20243 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:44,979 p=20243 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:44,980 p=20243 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:45,033 p=20243 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:00:45,034 p=20243 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:00:45,035 p=20243 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 15:00:45,035 p=20243 u=johnny n=ansible | vm11                       : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 15:03:13,037 p=23260 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 15:03:13,225 p=23260 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 15:03:13,226 p=23260 u=johnny n=ansible | changed: [vm11]
+2020-06-05 15:03:13,242 p=23260 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 15:03:13,242 p=23260 u=johnny n=ansible | ok: [vm11]
+2020-06-05 15:03:13,259 p=23260 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:03:13,259 p=23260 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+---
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 15:03:13,409 p=23260 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 15:03:13,410 p=23260 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:03:13,410 p=23260 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:03:13,456 p=23260 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:03:13,456 p=23260 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:03:13,504 p=23260 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:03:13,504 p=23260 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:03:13,506 p=23260 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 15:03:13,506 p=23260 u=johnny n=ansible | vm11                       : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 15:13:33,826 p=1412 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 32, column 35, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        - "{{ file_items }}"
+      when: "{{ files_confirm }}" == "yes"
+                                  ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-06-05 15:14:51,469 p=3742 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 32, column 33, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        - "{{ file_items }}"
+      when: {{ files_confirm }} == "yes"
+                                ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-06-05 15:16:24,313 p=5455 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 32, column 35, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        - "{{ file_items }}"
+      when: "{{ files_confirm }}" == "yes"
+                                  ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-06-05 15:17:00,166 p=6345 u=johnny n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/johnny/git/ansible/spray/playbooks/spray.yml': line 24, column 35, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      become: True
+      when: "{{ files_confirm }}" == "yes"
+                                  ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-06-05 15:17:25,222 p=6933 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 15:17:25,431 p=6933 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 15:17:25,431 p=6933 u=johnny n=ansible | changed: [vm11]
+2020-06-05 15:17:25,449 p=6933 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 15:17:25,449 p=6933 u=johnny n=ansible | ok: [vm11]
+2020-06-05 15:17:25,465 p=6933 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:17:25,466 p=6933 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+---
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 15:17:25,702 p=6933 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 15:17:25,703 p=6933 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:17:25,703 p=6933 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:17:25,762 p=6933 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:17:25,762 p=6933 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:17:25,814 p=6933 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:17:25,814 p=6933 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:17:25,816 p=6933 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 15:17:25,816 p=6933 u=johnny n=ansible | vm11                       : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 15:19:04,801 p=9441 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 15:19:04,993 p=9441 u=johnny n=ansible | TASK [read the contents of files list] ********************************************************************************************************************************************************
+2020-06-05 15:19:04,994 p=9441 u=johnny n=ansible | changed: [vm11]
+2020-06-05 15:19:05,011 p=9441 u=johnny n=ansible | TASK [set_fact] *******************************************************************************************************************************************************************************
+2020-06-05 15:19:05,011 p=9441 u=johnny n=ansible | ok: [vm11]
+2020-06-05 15:19:05,028 p=9441 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:19:05,028 p=9441 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+---
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+
+2020-06-05 15:19:05,044 p=9441 u=johnny n=ansible | TASK [debug] **********************************************************************************************************************************************************************************
+2020-06-05 15:19:05,045 p=9441 u=johnny n=ansible | ok: [vm11] => {}
+
+MSG:
+
+yes
+
+2020-06-05 15:19:05,323 p=9441 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 15:19:05,324 p=9441 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:19:05,324 p=9441 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test1.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test1.txt
+	/home/johnny/git/ansible/spray/playbooks/test1.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:19:05,409 p=9441 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:19:05,410 p=9441 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test2.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test2.txt
+	/home/johnny/git/ansible/spray/playbooks/test2.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:19:05,522 p=9441 u=johnny n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-06-05 15:19:05,523 p=9441 u=johnny n=ansible | failed: [vm11] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }
+}
+
+MSG:
+
+Could not find or access 'test3.txt'
+Searched in:
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/files/test3.txt
+	/home/johnny/git/ansible/spray/playbooks/test3.txt on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+
+2020-06-05 15:19:05,525 p=9441 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 15:19:05,526 p=9441 u=johnny n=ansible | vm11                       : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

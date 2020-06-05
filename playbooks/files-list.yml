@@ -1,0 +1,27 @@
+---
+# defaults file for copy-files
+#file_itmes:
+#  - src_file:  source file name, eg. filename.txt
+#    dest_file: target file path and name, eg./path_to_file/filename.txt
+#    file_owner: target file owner, eg. zhangsan
+#    file_group: target file group, eg. staff
+#    file_mode: target file privilege, eg. 0644
+file_items:
+  - src_file: test1.txt
+    dest_file: /tmp/test1.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0400'
+
+  - src_file: test2.txt
+    dest_file: /tmp/test2.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0644'
+
+  - src_file: test3.txt
+    dest_file: /tmp/test3.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0777'
+

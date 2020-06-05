@@ -1,0 +1,28 @@
+---
+
+- name: hand out files to target
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - files-list.yml
+
+  tasks:
+    - name: copy files to target
+      become: True
+      copy:
+        src: "{{ item.src_file }}"
+        dest: "{{ item.dest_file }}"
+        owner: "{{ item.file_owner }}"
+        group: "{{ item.file_group }}"
+        mode: "{{ item.file_mode }}"
+      with_items:
+        - "{{ file_items }}"
+      notify:  clear files list
+
+    - name: clear files list
+      replace:
+        after: 'file_items'
+        regexp: '^(.+)$'
+        path: roles/copy-files/files/files-list.yml
+        replace:  ''
+      connection: local
