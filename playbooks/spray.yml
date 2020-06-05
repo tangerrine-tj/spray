@@ -22,7 +22,7 @@
   handlers:
     - name: clear files list
       replace:
-        after: 'file_items'
+        after: '# Example END'
         regexp: '^(.+)$'
         path: files-list.yml
         replace:  ''
