@@ -33,7 +33,7 @@ file_items:
 
 file_items:
   - src_file:  bar.txt
-    dest_file: /hom/ansible/bar.txt
+    dest_file: /home/ansible/bar.txt
     file_owner: ansible
     file_group: vagrant
     file_mode: '0754'
