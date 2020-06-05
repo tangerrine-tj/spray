@@ -31,7 +31,6 @@ file_items:
     file_group: vagrant
     file_mode: '0644'
 
-file_items:
   - src_file:  bar.txt
     dest_file: /home/ansible/bar.txt
     file_owner: ansible
