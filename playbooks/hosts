@@ -11,6 +11,6 @@ vm22 ansible_host=192.168.33.22
 vm23 ansible_host=192.168.33.23
 
 [X1EL]
-vm31 ansible_host=192.168.100.11
-vm32 ansible_host=192.168.100.12
-vm33 ansible_host=192.168.100.13
+vm31 ansible_host=192.168.100.31
+vm32 ansible_host=192.168.100.32
+vm33 ansible_host=192.168.100.33

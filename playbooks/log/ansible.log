@@ -906,3 +906,896 @@ If you are using a module and expect the file to exist on the remote, see the re
 
 2020-06-05 15:19:05,525 p=9441 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
 2020-06-05 15:19:05,526 p=9441 u=johnny n=ansible | vm11                       : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:35:10,357 p=4618 u=johnny n=ansible | playbook: spray.yml
+2020-06-05 17:35:40,868 p=6930 u=johnny n=ansible | PLAY [hand out files to target] ***************************************************************************************************************************************************************
+2020-06-05 17:35:41,835 p=6930 u=johnny n=ansible | TASK [copy files to target] *******************************************************************************************************************************************************************
+2020-06-05 17:35:41,836 p=6930 u=johnny n=ansible | changed: [vm31] => (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'})
+2020-06-05 17:35:41,836 p=6930 u=johnny n=ansible | changed: [vm31] => (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'})
+2020-06-05 17:35:41,837 p=6930 u=johnny n=ansible | changed: [vm31] => (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'})
+2020-06-05 17:35:50,128 p=6930 u=johnny n=ansible | failed: [vm32] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host
+
+2020-06-05 17:35:50,130 p=6930 u=johnny n=ansible | failed: [vm22] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host
+
+2020-06-05 17:35:50,132 p=6930 u=johnny n=ansible | failed: [vm33] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host
+
+2020-06-05 17:35:50,135 p=6930 u=johnny n=ansible | failed: [vm21] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host
+
+2020-06-05 17:35:50,138 p=6930 u=johnny n=ansible | failed: [vm23] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host
+
+2020-06-05 17:35:50,140 p=6930 u=johnny n=ansible | failed: [vm32] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host
+
+2020-06-05 17:35:50,142 p=6930 u=johnny n=ansible | failed: [vm21] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host
+
+2020-06-05 17:35:50,145 p=6930 u=johnny n=ansible | failed: [vm22] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host
+
+2020-06-05 17:35:50,146 p=6930 u=johnny n=ansible | failed: [vm33] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host
+
+2020-06-05 17:35:50,150 p=6930 u=johnny n=ansible | failed: [vm23] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host
+
+2020-06-05 17:35:50,151 p=6930 u=johnny n=ansible | failed: [vm32] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host
+
+2020-06-05 17:35:50,152 p=6930 u=johnny n=ansible | fatal: [vm32]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.12 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:50,159 p=6930 u=johnny n=ansible | failed: [vm21] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host
+
+2020-06-05 17:35:50,159 p=6930 u=johnny n=ansible | failed: [vm33] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host
+
+2020-06-05 17:35:50,160 p=6930 u=johnny n=ansible | fatal: [vm33]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.13 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:50,167 p=6930 u=johnny n=ansible | fatal: [vm21]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.21 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:50,173 p=6930 u=johnny n=ansible | failed: [vm22] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host
+
+2020-06-05 17:35:50,174 p=6930 u=johnny n=ansible | fatal: [vm22]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.22 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:50,977 p=6930 u=johnny n=ansible | changed: [vm11] => (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'})
+2020-06-05 17:35:50,977 p=6930 u=johnny n=ansible | changed: [vm11] => (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'})
+2020-06-05 17:35:50,978 p=6930 u=johnny n=ansible | changed: [vm11] => (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'})
+2020-06-05 17:35:51,072 p=6930 u=johnny n=ansible | failed: [vm23] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host
+
+2020-06-05 17:35:51,075 p=6930 u=johnny n=ansible | fatal: [vm23]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.23 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:53,258 p=6930 u=johnny n=ansible | failed: [vm12] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host
+
+2020-06-05 17:35:53,286 p=6930 u=johnny n=ansible | failed: [vm13] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host
+
+2020-06-05 17:35:53,297 p=6930 u=johnny n=ansible | failed: [vm14] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host
+
+2020-06-05 17:35:54,087 p=6930 u=johnny n=ansible | failed: [vm15] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test1.txt', u'file_group': u'vagrant', u'file_mode': u'0400', u'src_file': u'test1.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test1.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0400", 
+        "file_owner": "vagrant", 
+        "src_file": "test1.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host
+
+2020-06-05 17:35:56,329 p=6930 u=johnny n=ansible | failed: [vm12] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host
+
+2020-06-05 17:35:56,352 p=6930 u=johnny n=ansible | failed: [vm13] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host
+
+2020-06-05 17:35:56,353 p=6930 u=johnny n=ansible | failed: [vm14] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host
+
+2020-06-05 17:35:57,155 p=6930 u=johnny n=ansible | failed: [vm15] (item={u'file_owner': u'vagrant', u'dest_file': u'/tmp/test2.txt', u'file_group': u'vagrant', u'file_mode': u'0644', u'src_file': u'test2.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test2.txt", 
+        "file_group": "vagrant", 
+        "file_mode": "0644", 
+        "file_owner": "vagrant", 
+        "src_file": "test2.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host
+
+2020-06-05 17:35:59,397 p=6930 u=johnny n=ansible | failed: [vm12] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host
+
+2020-06-05 17:35:59,402 p=6930 u=johnny n=ansible | fatal: [vm12]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.12 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:59,429 p=6930 u=johnny n=ansible | failed: [vm14] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host
+
+2020-06-05 17:35:59,431 p=6930 u=johnny n=ansible | fatal: [vm14]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.14 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:35:59,432 p=6930 u=johnny n=ansible | failed: [vm13] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host
+
+2020-06-05 17:35:59,434 p=6930 u=johnny n=ansible | fatal: [vm13]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.13 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:36:00,229 p=6930 u=johnny n=ansible | failed: [vm15] (item={u'file_owner': u'ansible', u'dest_file': u'/tmp/test3.txt', u'file_group': u'opergrp', u'file_mode': u'0777', u'src_file': u'test3.txt'}) => {
+    "ansible_loop_var": "item", 
+    "item": {
+        "dest_file": "/tmp/test3.txt", 
+        "file_group": "opergrp", 
+        "file_mode": "0777", 
+        "file_owner": "ansible", 
+        "src_file": "test3.txt"
+    }, 
+    "unreachable": true
+}
+
+MSG:
+
+Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host
+
+2020-06-05 17:36:00,233 p=6930 u=johnny n=ansible | fatal: [vm15]: UNREACHABLE! => {
+    "changed": false, 
+    "results": [
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test1.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0400", 
+                "file_owner": "vagrant", 
+                "src_file": "test1.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test2.txt", 
+                "file_group": "vagrant", 
+                "file_mode": "0644", 
+                "file_owner": "vagrant", 
+                "src_file": "test2.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host", 
+            "unreachable": true
+        }, 
+        {
+            "ansible_loop_var": "item", 
+            "item": {
+                "dest_file": "/tmp/test3.txt", 
+                "file_group": "opergrp", 
+                "file_mode": "0777", 
+                "file_owner": "ansible", 
+                "src_file": "test3.txt"
+            }, 
+            "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.33.15 port 22: No route to host", 
+            "unreachable": true
+        }
+    ]
+}
+
+MSG:
+
+All items completed
+
+2020-06-05 17:36:00,453 p=6930 u=johnny n=ansible | RUNNING HANDLER [clear files list] ************************************************************************************************************************************************************
+2020-06-05 17:36:00,454 p=6930 u=johnny n=ansible | fatal: [vm11]: FAILED! => {
+    "changed": false, 
+    "rc": 257
+}
+
+MSG:
+
+Path roles/copy-files/files/files-list.yml does not exist !
+
+2020-06-05 17:36:00,477 p=6930 u=johnny n=ansible | [DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host vm31 should use /usr/bin/python3, but is using /usr/bin/python for backward compatibility with prior Ansible releases. A future 
+Ansible release will default to using the discovered platform python for this host. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more 
+information. This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2020-06-05 17:36:00,477 p=6930 u=johnny n=ansible | fatal: [vm31]: FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "rc": 257
+}
+
+MSG:
+
+Path roles/copy-files/files/files-list.yml does not exist !
+
+2020-06-05 17:36:00,477 p=6930 u=johnny n=ansible | NO MORE HOSTS LEFT ****************************************************************************************************************************************************************************
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm11                       : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm12                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm13                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm14                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm15                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm21                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm22                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm23                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,478 p=6930 u=johnny n=ansible | vm31                       : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,479 p=6930 u=johnny n=ansible | vm32                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2020-06-05 17:36:00,479 p=6930 u=johnny n=ansible | vm33                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   

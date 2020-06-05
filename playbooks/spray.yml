@@ -19,10 +19,11 @@
         - "{{ file_items }}"
       notify:  clear files list
 
+  handlers:
     - name: clear files list
       replace:
         after: 'file_items'
         regexp: '^(.+)$'
-        path: roles/copy-files/files/files-list.yml
+        path: files-list.yml
         replace:  ''
       connection: local
