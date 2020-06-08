@@ -8,15 +8,15 @@
     - files-list.yml
 
   tasks:
-    - name: check if the base directory exist
-      stat:
-        path: "{{ item.dest_file|dirname }}"
-      register: dir_stat
-      with_items:
-        - "{{ file_items }}"
-
-    - set_fact:
-        basedir_stat: "{{ dir_stat.results }}"
+      #    - name: check if the base directory exist
+      #      stat:
+      #        path: "{{ item.dest_file|dirname }}"
+      #      register: dir_stat
+      #      with_items:
+      #        - "{{ file_items }}"
+      #
+      #    - set_fact:
+      #        basedir_stat: "{{ dir_stat.results }}"
 
     - name: make sure the base directory exist
       file:
@@ -26,6 +26,7 @@
         state: directory
       with_items:
         - "{{ file_items }}"
+      when: item.dest_file|dirname is undefined
 
     - name: copy files to target
       copy:
