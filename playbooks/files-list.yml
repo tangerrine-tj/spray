@@ -26,7 +26,7 @@
 
 file_items:
   - src_file: foo.txt
-    dest_file: /tmp/vagrant/foo.txt
+    dest_file: /tmp/vagrant/foo/foo.txt
     file_owner: vagrant
     file_group: vagrant
     file_mode: '0644'
@@ -36,3 +36,15 @@ file_items:
     file_owner: ansible
     file_group: opergrp
     file_mode: '0754'
+
+  - src_file: foobar.txt
+    dest_file: /home/vagrant/foobar/foobar/foobar/foobar.txt
+    file_owner: vagrant
+    file_group: vagrant
+    file_mode: '0640'
+
+  - src_file: helloworld.txt
+    dest_file: /home/ansible/helloworld.txt
+    file_owner: ansible
+    file_group: opergrp
+    file_mode: '0755'

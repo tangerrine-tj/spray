@@ -2,3 +2,4 @@
 playbooks/facts/
 playbooks/log/
 venv/
+*.log

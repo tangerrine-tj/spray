@@ -3,30 +3,39 @@
 - name: hand out files to target
   hosts: all
   become: True
-  gather_facts: false
+  gather_facts: False
   vars_files:
     - files-list.yml
 
   tasks:
-      #    - name: check if the base directory exist
-      #      stat:
-      #        path: "{{ item.dest_file|dirname }}"
-      #      register: dir_stat
-      #      with_items:
-      #        - "{{ file_items }}"
-      #
-      #    - set_fact:
-      #        basedir_stat: "{{ dir_stat.results }}"
-
-    - name: make sure the base directory exist
-      file:
+    - name: check wether the base directory exist
+      stat:
         path: "{{ item.dest_file|dirname }}"
-        owner: "{{ item.file_owner }}"
-        group: "{{ item.file_group }}"
-        state: directory
+      register: basedir
       with_items:
         - "{{ file_items }}"
-      when: item.dest_file|dirname is undefined
+
+#    - debug:
+#        var: basedir
+#
+    - set_fact:
+        basedir_results: "{{ basedir.results }}"
+
+#    - debug:
+#        msg: "directory is {{ item.stat.path|default('null') }}, isdir is {{ item.stat.isdir|default('null') }} since existing is {{ item.stat.exists }}"
+#      with_items:
+#        - "{{ basedir_results }}"
+#      when: not item.stat.exists
+#
+    - name: make the base directory
+      file:
+        path: "{{ item.item.dest_file|dirname }}"
+        owner: "{{ item.item.file_owner }}"
+        group: "{{ item.item.file_group }}"
+        state: directory
+      with_items:
+        - "{{ basedir_results }}"
+      when: not item.stat.exists
 
     - name: copy files to target
       copy:
