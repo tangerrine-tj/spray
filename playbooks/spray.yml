@@ -15,18 +15,9 @@
       with_items:
         - "{{ file_items }}"
 
-#    - debug:
-#        var: basedir
-#
     - set_fact:
         basedir_results: "{{ basedir.results }}"
 
-#    - debug:
-#        msg: "directory is {{ item.stat.path|default('null') }}, isdir is {{ item.stat.isdir|default('null') }} since existing is {{ item.stat.exists }}"
-#      with_items:
-#        - "{{ basedir_results }}"
-#      when: not item.stat.exists
-#
     - name: make the base directory
       file:
         path: "{{ item.item.dest_file|dirname }}"
