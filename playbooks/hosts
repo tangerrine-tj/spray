@@ -14,3 +14,10 @@ vm23 ansible_host=192.168.33.23
 vm31 ansible_host=192.168.100.31
 vm32 ansible_host=192.168.100.32
 vm33 ansible_host=192.168.100.33
+
+[X1EH_100]
+vm111 ansible_host=192.168.100.11
+vm112 ansible_host=192.168.100.12
+vm113 ansible_host=192.168.100.13
+vm114 ansible_host=192.168.100.14
+vm115 ansible_host=192.168.100.15

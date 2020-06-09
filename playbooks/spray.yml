@@ -2,13 +2,33 @@
 
 - name: hand out files to target
   hosts: all
-  gather_facts: false
+  become: True
+  gather_facts: False
   vars_files:
     - files-list.yml
 
   tasks:
+    - name: check wether the base directory exist
+      stat:
+        path: "{{ item.dest_file|dirname }}"
+      register: basedir
+      with_items:
+        - "{{ file_items }}"
+
+    - set_fact:
+        basedir_results: "{{ basedir.results }}"
+
+    - name: make the base directory
+      file:
+        path: "{{ item.item.dest_file|dirname }}"
+        owner: "{{ item.item.file_owner }}"
+        group: "{{ item.item.file_group }}"
+        state: directory
+      with_items:
+        - "{{ basedir_results }}"
+      when: not item.stat.exists
+
     - name: copy files to target
-      become: True
       copy:
         src: "{{ item.src_file }}"
         dest: "{{ item.dest_file }}"
@@ -17,13 +37,14 @@
         mode: "{{ item.file_mode }}"
       with_items:
         - "{{ file_items }}"
-      notify:  clear files list
+      notify:  remove source files
 
   handlers:
-    - name: clear files list
-      replace:
-        after: '# Example END'
-        regexp: '^(.+)$'
-        path: files-list.yml
-        replace:  ''
+    - name: remove source files
+      become: False
+      file:
+        path: files/{{ item.src_file }}
+        state: absent
+      with_items:
+        - "{{ file_items }}"
       connection: local

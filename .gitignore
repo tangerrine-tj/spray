@@ -1,4 +1,5 @@
 .idea/
-playbooks/log/
 playbooks/facts/
+playbooks/log/
 venv/
+*.log
